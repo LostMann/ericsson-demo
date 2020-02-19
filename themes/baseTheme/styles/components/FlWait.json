@@ -1,0 +1,18 @@
+{
+	".flWait": {
+		"left": 0,
+		"top": 0,
+		"width": null,
+		"height": null,
+		"right": 0,
+		"bottom": 0,
+		"flexProps": {
+			"alignItems": "CENTER",
+			"justifyContent": "CENTER",
+			"positionType": "ABSOLUTE"
+		},
+		"&-indicator": {
+			"color": "rgba( 0, 0, 0, 1 )"
+		}
+	}
+}
