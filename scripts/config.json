@@ -1,4 +1,9 @@
 {
-    "key1": "value1",
-    "key2": "value2"
+    "currentEnvironment": "mock",
+    "mock": {
+        "baseServiceUrl": "https://mock.dev.ide.smartface.io/organizationv43y5qw7hvqne1b6/tcell/api"
+    },
+    "dev": {
+        
+    }
 }

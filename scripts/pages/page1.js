@@ -2,11 +2,11 @@ const touch = require("sf-extension-utils/lib/touch");
 const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 const PageTitleLayout = require("components/PageTitleLayout");
 const guid = require("sf-extension-utils/lib/guid");
-
 const extend = require("js-base/core/extend");
 const System = require("sf-core/device/system");
 const FlWait = require("components/FlWait");
 const Dialog = require("sf-core/ui/dialog");
+const { getProfile } = require("service/profile");
 
 // Get generated UI code
 const Page1Design = require("ui/ui_page1");
@@ -35,13 +35,26 @@ function onShow(superOnShow) {
     superOnShow();
     this.headerBar.titleLayout.applyLayout();
 
-
     let dialog = new Dialog();
     let flWait = new FlWait();
     componentContextPatch(dialog, `dialog${guid()}`);
     dialog.layout.addChild(flWait, `flWait${guid()}`, ".flWait");
     dialog.layout.applyLayout();
     dialog.show();
+
+    getProfile("8e4a94a1-c1cf-4ead-b45c-125ecc02c65a")
+        .then(profile => {
+            console.log("profile", profile);
+        })
+        .catch(e => {
+            console.error("error", e);
+        })
+        .finally(e => {
+            dialog.hide();
+        })
+
+
+
 
 }
 /**
